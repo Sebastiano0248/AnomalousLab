@@ -5,9 +5,8 @@ Its goal is to serve as a collaborative research platform, allowing contributors
 
 > ⚙️ Recommended Python version: Python 3.12.10 or higher.
 
-## Installation
-
-### Set Up a Virtual Environment
+## Development Setup
+### 1. Set Up a Virtual Environment
 Creating a virtual environment is not mandatory, but it is highly recommended for a clean installation. To set it up:
 ```bash
 python -m venv venv
@@ -26,11 +25,23 @@ Then activate it:
 > deactivate
 > ```
 
-### AnomalousLib installation
-As indicated on the [PyPI page](https://pypi.org/project/AnomalousLib/), install ```AnomalousLib``` using:
+### 2. Install Dependencies
+Install the required libraries listed in ```requirements.txt```:
 ```bash
-pip install anomalouslib
+pip install -r requirements.txt
 ```
+To verify the installation, you can regenerate the ```requirements.txt``` and check for any differences:
+- On **Linux/macOS**:
+    ```bash
+    pip freeze | grep -vE "^-e |@ file://" > requirements.txt
+    ```
+- On **Windows**:
+    ```powershell
+    pip freeze | Select-String -NotMatch '^-e |@ file://' > requirements.txt
+    ```
+> **💡 Note:** This filtering step avoids including the local installation of the library itself.
+
+If no changes appear in the file, the setup is correct.
 
 ## Repository Structure
 The following is the current ideal structure for the repository. It may evolve over time as research progresses and new needs arise:

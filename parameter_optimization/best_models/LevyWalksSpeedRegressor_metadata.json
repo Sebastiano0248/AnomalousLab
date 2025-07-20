@@ -2,11 +2,11 @@
   "trajectory_type": "LevyWalks",
   "parameter": "speed",
   "parameter_range": [
-    0.10346746029332371,
-    4.993277420207481
+    0.10007064809164432,
+    4.997186537800586
   ],
   "architecture": "specific",
-  "timestamp": "20250719_204210",
+  "timestamp": "20250720_212002",
   "training_completed": true,
   "original_model_params": {
     "input_channels": 2,
@@ -14,5 +14,7 @@
     "specific_class": "LWSpeedCNN",
     "trajectory_type": "LevyWalks",
     "parameter": "speed"
-  }
+  },
+  "training_duration_seconds": 33.21,
+  "training_duration_formatted": "00:00:33"
 }

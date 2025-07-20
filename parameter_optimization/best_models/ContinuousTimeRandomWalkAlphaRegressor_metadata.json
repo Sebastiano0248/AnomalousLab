@@ -2,11 +2,11 @@
   "trajectory_type": "ContinuousTimeRandomWalk",
   "parameter": "alpha",
   "parameter_range": [
-    1.1000116057371783,
-    2.4999900837544455
+    1.1001501808265592,
+    2.4999810062096683
   ],
   "architecture": "specific",
-  "timestamp": "20250719_203056",
+  "timestamp": "20250720_211231",
   "training_completed": true,
   "original_model_params": {
     "input_channels": 2,
@@ -14,5 +14,7 @@
     "specific_class": "CTRWAlphaCNN",
     "trajectory_type": "ContinuousTimeRandomWalk",
     "parameter": "alpha"
-  }
+  },
+  "training_duration_seconds": 530.62,
+  "training_duration_formatted": "00:08:50"
 }

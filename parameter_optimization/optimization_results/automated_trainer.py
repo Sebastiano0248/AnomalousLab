@@ -5,6 +5,7 @@ from datetime import datetime
 import json
 import pickle
 import inspect
+import time
 
 from anomalouslib.models.model_handler import save_model, load_model, get_class_def_from_notebook
 from anomalouslib.models.testing_utils import evaluate_continuous, predict_continuous
@@ -127,6 +128,8 @@ def train_regressor(model, train_loader, val_loader, epochs, lr, weight_decay):
     best_val_loss = float('inf')
     best_model = None
     
+    start_time = time.time()
+    
     for epoch in range(epochs):
         model.train()
         train_losses = []
@@ -159,8 +162,11 @@ def train_regressor(model, train_loader, val_loader, epochs, lr, weight_decay):
             best_val_loss = val_loss
             best_model = model.state_dict().copy()
     
+    end_time = time.time()
+    training_duration = end_time - start_time
+    
     model.load_state_dict(best_model)
-    return model
+    return model, training_duration
 
 def evaluate_model(model, X_test, y_test):
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
@@ -173,7 +179,7 @@ def evaluate_model(model, X_test, y_test):
         
         mse = F.mse_loss(predictions, y_test).item()
 
-def save_trained_model(model, trajectory_type, parameter, model_params, param_range, save_dir, architecture_name, architecture_instance=None):
+def save_trained_model(model, trajectory_type, parameter, model_params, param_range, save_dir, architecture_name, training_duration, architecture_instance=None):
     os.makedirs(save_dir, exist_ok=True)
     
     model_name = f"{trajectory_type}{parameter.capitalize()}Regressor"
@@ -232,7 +238,9 @@ class {model_name}(nn.Module):
         "architecture": architecture_name,
         "timestamp": datetime.now().strftime("%Y%m%d_%H%M%S"),
         "training_completed": True,
-        "original_model_params": model_params
+        "original_model_params": model_params,
+        "training_duration_seconds": round(training_duration, 2),
+        "training_duration_formatted": f"{int(training_duration // 3600):02d}:{int((training_duration % 3600) // 60):02d}:{int(training_duration % 60):02d}"
     }
     
     with open(metadata_path, 'w') as f:
@@ -330,7 +338,7 @@ def main():
     epochs = training_params.get("epochs", 15)
     weight_decay = training_params.get("weight_decay", 1e-3)
     
-    best_model = train_regressor(
+    best_model, training_duration = train_regressor(
         model, train_loader, val_loader, 
         epochs, lr, weight_decay
     )
@@ -340,7 +348,7 @@ def main():
     model_path = save_trained_model(
         best_model, args.trajectory_type, args.parameter, 
         model_params, param_range, args.save_dir, "specific", 
-        architecture_instance=architecture_instance
+        training_duration, architecture_instance=architecture_instance
     )
 
 if __name__ == "__main__":

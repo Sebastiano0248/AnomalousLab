@@ -1,0 +1,18 @@
+{
+  "trajectory_type": "ContinuousTimeRandomWalk",
+  "parameter": "alpha",
+  "parameter_range": [
+    1.1000116057371783,
+    2.4999900837544455
+  ],
+  "architecture": "specific",
+  "timestamp": "20250719_203056",
+  "training_completed": true,
+  "original_model_params": {
+    "input_channels": 2,
+    "architecture": "specific",
+    "specific_class": "CTRWAlphaCNN",
+    "trajectory_type": "ContinuousTimeRandomWalk",
+    "parameter": "alpha"
+  }
+}

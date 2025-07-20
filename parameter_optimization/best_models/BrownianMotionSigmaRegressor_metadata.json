@@ -1,0 +1,18 @@
+{
+  "trajectory_type": "BrownianMotion",
+  "parameter": "sigma",
+  "parameter_range": [
+    0.10006584240059556,
+    2.999997361987011
+  ],
+  "architecture": "specific",
+  "timestamp": "20250719_203953",
+  "training_completed": true,
+  "original_model_params": {
+    "input_channels": 2,
+    "architecture": "specific",
+    "specific_class": "BMSigmaCNN",
+    "trajectory_type": "BrownianMotion",
+    "parameter": "sigma"
+  }
+}

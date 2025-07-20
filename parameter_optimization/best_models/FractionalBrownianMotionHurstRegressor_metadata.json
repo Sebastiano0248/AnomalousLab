@@ -2,11 +2,11 @@
   "trajectory_type": "FractionalBrownianMotion",
   "parameter": "hurst",
   "parameter_range": [
-    0.10000464071420856,
-    0.8999940112030768
+    0.10001110514196654,
+    0.8999822903830106
   ],
   "architecture": "specific",
-  "timestamp": "20250719_200727",
+  "timestamp": "20250720_204820",
   "training_completed": true,
   "original_model_params": {
     "input_channels": 2,
@@ -14,5 +14,7 @@
     "specific_class": "FBMHurstCNN",
     "trajectory_type": "FractionalBrownianMotion",
     "parameter": "hurst"
-  }
+  },
+  "training_duration_seconds": 138.39,
+  "training_duration_formatted": "00:02:18"
 }

@@ -2,11 +2,11 @@
   "trajectory_type": "LevyWalks",
   "parameter": "alpha",
   "parameter_range": [
-    1.101376707021168,
-    1.9993111223800795
+    1.1002786597572125,
+    1.9989531444737134
   ],
   "architecture": "specific",
-  "timestamp": "20250719_204115",
+  "timestamp": "20250720_211923",
   "training_completed": true,
   "original_model_params": {
     "input_channels": 2,
@@ -14,5 +14,7 @@
     "specific_class": "LWAlphaCNN",
     "trajectory_type": "LevyWalks",
     "parameter": "alpha"
-  }
+  },
+  "training_duration_seconds": 46.53,
+  "training_duration_formatted": "00:00:46"
 }

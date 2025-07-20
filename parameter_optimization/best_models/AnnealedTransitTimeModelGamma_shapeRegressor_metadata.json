@@ -2,11 +2,11 @@
   "trajectory_type": "AnnealedTransitTimeModel",
   "parameter": "gamma_shape",
   "parameter_range": [
-    0.5000049882636162,
-    4.999959110575137
+    0.5001233967798886,
+    4.999210317793635
   ],
   "architecture": "specific",
-  "timestamp": "20250719_202047",
+  "timestamp": "20250720_210332",
   "training_completed": true,
   "original_model_params": {
     "input_channels": 2,
@@ -14,5 +14,7 @@
     "specific_class": "ATTMGammaShapeCNN",
     "trajectory_type": "AnnealedTransitTimeModel",
     "parameter": "gamma_shape"
-  }
+  },
+  "training_duration_seconds": 657.76,
+  "training_duration_formatted": "00:10:57"
 }

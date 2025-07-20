@@ -2,11 +2,11 @@
   "trajectory_type": "BrownianMotion",
   "parameter": "sigma",
   "parameter_range": [
-    0.10006584240059556,
-    2.999997361987011
+    0.10005035514254347,
+    2.9995342270990193
   ],
   "architecture": "specific",
-  "timestamp": "20250719_203953",
+  "timestamp": "20250720_211829",
   "training_completed": true,
   "original_model_params": {
     "input_channels": 2,
@@ -14,5 +14,7 @@
     "specific_class": "BMSigmaCNN",
     "trajectory_type": "BrownianMotion",
     "parameter": "sigma"
-  }
+  },
+  "training_duration_seconds": 324.33,
+  "training_duration_formatted": "00:05:24"
 }

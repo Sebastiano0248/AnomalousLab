@@ -5,8 +5,9 @@ Its goal is to serve as a collaborative research platform, allowing contributors
 
 > ⚙️ Recommended Python version: Python 3.12.10 or higher.
 
-## Development Setup
-### 1. Set Up a Virtual Environment
+## Installation
+
+### Set Up a Virtual Environment
 Creating a virtual environment is not mandatory, but it is highly recommended for a clean installation. To set it up:
 ```bash
 python -m venv venv
@@ -25,62 +26,58 @@ Then activate it:
 > deactivate
 > ```
 
-### 2. Install Dependencies
-Install the required libraries listed in ```requirements.txt```:
+### AnomalousLib installation
+As indicated on the [PyPI page](https://pypi.org/project/AnomalousLib/), install ```AnomalousLib``` using:
 ```bash
-pip install -r requirements.txt
+pip install anomalouslib
 ```
-To verify the installation, you can regenerate the ```requirements.txt``` and check for any differences:
-- On **Linux/macOS**:
-    ```bash
-    pip freeze | grep -vE "^-e |@ file://" > requirements.txt
-    ```
-- On **Windows**:
-    ```powershell
-    pip freeze | Select-String -NotMatch '^-e |@ file://' > requirements.txt
-    ```
-> **💡 Note:** This filtering step avoids including the local installation of the library itself.
-
-If no changes appear in the file, the setup is correct.
 
 ## Repository Structure
-The following is the current ideal structure for the repository. It may evolve over time as research progresses and new needs arise:
+The repository is organized into several main components, where each directory represents a specific research study focused on different aspects of anomalous diffusion. Each study directory contains its own README file that explains the specific research objectives, methodology, and findings of that particular investigation:
 ```nginx
 AnomalousLab
-│   # Jupyter notebooks for research and experimentation
-├───experiments
-│   │   # Classifier model studies
-│   ├───classifier_models
-│   │   ├───TrajectoryTypeClassifier
-│   │   └───RandomWalkTypeClassifier
-│   │   # Regressor model studies
-│   └───regressor_models
-│       ├───RandomWalkStopRegressor
-│       ├───BrownianMotionDeltaTRegressor
-│       ├───BrownianMotionSigmaRegressor
-│       ├───FractionalBrownianMotionHurstRegressor
-│       ├───ContinuousTimeRandomWalkAlphaRegressor
-│       ├───LevyWalkAlphaRegressor
-│       ├───LevyWalkBetaRegressor
-│       ├───LevyWalkSpeedRegressor
-│       ├───AnnealedTransientTimeModelGammaShapeRegressor
-│       └───ScaledBrownianMotionBetaRegressor
-│   # Trained models
-├───models
-|   # Experiment outputs
-└───results
-    │   # Statistical summaries and post-processing
-    ├───analysis/
-    │   # Model predictions (raw or processed)
-    ├───predictions/
-    │   # Evaluation scores (e.g., MSE, R²)
-    ├───metrics/
-    │   # Plots and charts
-    ├───visualizations/
-    │   # Notebooks, PDFs, markdown summaries
-    ├───reports/
-    │   # Experiment and training logs
-    └───logs/
+│   # Main documentation and dependencies
+├───README.md
+├───requirements.txt
+│   # Dataset generation tools and notebooks
+├───dataset_generation/
+│   ├───README.md                            # Study documentation
+│   ├───DatasetGeneratorTest.py
+│   ├───GenerateDatasets.ipynb
+│   └───generate_datasets.ipynb
+│   # Trajectory classification experiments
+├───trajectory_type_classifier/
+│   ├───README.md                            # Study documentation
+│   ├───TrajectoryTypeClassifier.ipynb
+│   ├───testing_model_for_each_traj_type.ipynb
+│   └───TrajectoryTypeClassifier.pth          # Trained model
+│   # Parameter optimization and model training
+├───parameter_optimization/
+│   ├───automated_trainer.py                  # Automated training pipeline
+│   ├───model_analysis.ipynb                 # Model performance analysis
+│   ├───prova_prediccio_mitja.ipynb          # Prediction testing
+│   ├───README.md                            # Module-specific documentation
+│   ├───architectures/                       # Model architectures
+│   │   ├───base_architecture.py
+│   │   ├───brownian_motion.py
+│   │   ├───fractional_brownian_motion.py
+│   │   ├───continuous_time_random_walk.py
+│   │   ├───levy_walks.py
+│   │   ├───annealed_transit_time_model.py
+│   │   └───scaled_brownian_motion.py
+│   ├───best_models/                         # Optimized trained models
+│   │   ├───BrownianMotionDelta_tRegressor.pth
+│   │   ├───BrownianMotionSigmaRegressor.pth
+│   │   ├───FractionalBrownianMotionHurstRegressor.pth
+│   │   ├───ContinuousTimeRandomWalkAlphaRegressor.pth
+│   │   ├───LevyWalksAlphaRegressor.pth
+│   │   ├───LevyWalksBetaRegressor.pth
+│   │   ├───LevyWalksSpeedRegressor.pth
+│   │   ├───AnnealedTransitTimeModelGamma_shapeRegressor.pth
+│   │   ├───ScaledBrownianMotionBetaRegressor.pth
+│   │   └───*_metadata.json                  # Model metadata files
+│   └───optimization_results/                # Training optimization results
+└───old (in order to delete)/               # Legacy files (to be removed)
 ```
 
 ## Jupyter Notebooks

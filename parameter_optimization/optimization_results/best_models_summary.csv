@@ -1,0 +1,10 @@
+trajectory_type,parameter,best_mse,training_time_seconds,best_lr,best_batch_size,best_epochs,best_weight_decay,best_num_particles,best_num_steps,model_filename
+BrownianMotion,delta_t,0.0625,61.63444542884827,0.0015,128,20,0.001,20000,500,N/A
+BrownianMotion,sigma,0.026,57.10438084602356,0.00015000000000000001,64,20,0.0001,15000,500,N/A
+FractionalBrownianMotion,hurst,0.0005,234.7752525806427,5e-05,64,25,0.0001,15000,500,N/A
+ContinuousTimeRandomWalk,alpha,0.0259,125.77145504951477,0.0001,64,25,0.0001,15000,500,N/A
+LevyWalks,alpha,0.0418,94.97359490394592,0.0001,64,25,0.0001,15000,500,N/A
+LevyWalks,beta,0.0809,59.23858070373535,0.0005,128,30,0.001,20000,200,N/A
+LevyWalks,speed,0.0506,121.04788851737976,0.001,64,20,0.005,10000,300,N/A
+AnnealedTransitTimeModel,gamma_shape,0.003,120.10629773139954,0.001,128,25,0.001,20000,500,N/A
+ScaledBrownianMotion,beta,0.0004,38.70102548599243,0.0001,64,25,0.0001,15000,500,N/A

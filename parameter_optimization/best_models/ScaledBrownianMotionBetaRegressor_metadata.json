@@ -1,0 +1,18 @@
+{
+  "trajectory_type": "ScaledBrownianMotion",
+  "parameter": "beta",
+  "parameter_range": [
+    0.5000981929240348,
+    1.999731104397142
+  ],
+  "architecture": "specific",
+  "timestamp": "20250719_201040",
+  "training_completed": true,
+  "original_model_params": {
+    "input_channels": 2,
+    "architecture": "specific",
+    "specific_class": "SBMBetaCNN",
+    "trajectory_type": "ScaledBrownianMotion",
+    "parameter": "beta"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "trajectory_type": "BrownianMotion",
+  "parameter": "delta_t",
+  "parameter_range": [
+    0.10005109166325771,
+    4.9999882378216665
+  ],
+  "architecture": "specific",
+  "timestamp": "20250719_204825",
+  "training_completed": true,
+  "original_model_params": {
+    "input_channels": 2,
+    "architecture": "specific",
+    "specific_class": "BMDeltaTCNN",
+    "trajectory_type": "BrownianMotion",
+    "parameter": "delta_t"
+  }
+}
